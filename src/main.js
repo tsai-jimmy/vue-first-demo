@@ -9,13 +9,23 @@ Vue.use(VueRouter)
 // page
 import Hello from './pages/Hello.vue';
 import CtoF from './pages/CtoF.vue';
+import CtoFstep2 from './pages/CtoF-step2.vue';
+import LearnStructure from './pages/LearnStructure.vue';
 import App from './App.vue';
 
 const router = new VueRouter({
   // 使用 HTML 5 模式
   mode: 'history',
   base: __dirname,
-  // routre 表
+  // router 表
+  // {
+  //   路徑顯示
+  //   path: '/hello',
+  //   對應到app.vue的名稱
+  //   name: 'hello',
+  //   是哪一個component
+  //   component: Hello
+  // },
   routes: [
     {
       path: '/hello',
@@ -26,6 +36,16 @@ const router = new VueRouter({
       path: '/c2f',
       name: 'c2f',
       component: CtoF
+    },
+    {
+      path: '/c2f-step2',
+      name: 'c2f-step2',
+      component: CtoFstep2
+    },
+    {
+      path: '/learnstructure',
+      name: 'learnstructure',
+      component: LearnStructure
     },
     // router 轉址
     { path: '/*', redirect: '/hello' }

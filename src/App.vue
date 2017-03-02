@@ -20,7 +20,9 @@
     -->
     <router-link :to="{path: '/hello'}">Hello</router-link>
     <router-link :to="{name: 'c2f'}">CtoF</router-link>
-    
+    <router-link :to="{name: 'c2f-step2'}">CtoF-step2</router-link>
+    <!-- 轉跳到學習component建構 -->
+    <router-link :to="{name: 'learnstructure'}">LearnStructure</router-link>
     <!-- 轉跳後所載入的 component 最後會顯示在此 -->
     <router-view></router-view>
 
