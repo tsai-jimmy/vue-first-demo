@@ -25,8 +25,7 @@
     <router-link :to="{name: 'learnstructure'}">LearnStructure</router-link>
     <!-- 轉跳後所載入的 component 最後會顯示在此 -->
     <router-view></router-view>
-
-  <div>
+  </div>
 </template>
 
 <script>
