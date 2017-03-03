@@ -2,9 +2,14 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 引入 vuex
+import Vuex from 'vuex'
 
 // init
 Vue.use(VueRouter)
+// 告訴 Vue 使用 vuex
+Vue.use(Vuex)
+
 
 // page
 import Hello from './pages/Hello.vue';

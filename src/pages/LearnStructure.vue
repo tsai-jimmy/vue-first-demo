@@ -1,15 +1,26 @@
 <template>
   <div>
-    <navbar />
-    <container :list="list" />
-    <jumbotron />
+    <NavBar>
+      <!-- 這段 code 將會被插入在上面我們設計的地方（ nav 右邊）  -->
+      <div slot="right">
+        <div class="form-group">
+          <input type="text" placeholder="Email" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+      </div>
+    </NavBar>
+    <Jumbotron />
+    <Container :list="list" />
     <!-- <Hello/> -->
   </div>
 </template>
 
 <script>
-// import NavBar from '../components/navbar.vue'
-// import Jumbotron from '../components/jumbotron.vue'
+import NavBar from '../components/navbar.vue'
+import Jumbotron from '../components/jumbotron.vue'
 import Container from '../components/container.vue'
 // 可以嘗試把昨天以前的範例載入這個新頁面使用看看！
 import Hello from './Hello.vue'
@@ -40,13 +51,15 @@ export default {
   },
 
   components: {
-    // Navbar,
-    // Jumbotron,
+    NavBar,
+    Jumbotron,
     Container,
     Hello
   }
 }
 </script>
 <style>
-
+  .navbar-fixed-top {
+    top: 53px;
+  }
 </style>
