@@ -1,8 +1,13 @@
 <template>
   <div class="container">
     <h2>count:<span class="count"> {{ count }}</span></h2>
-    <button @click="actionIncrease"> + </button>
-    <button @click="actionDecrease"> - </button>
+    <span>Set Number:</span>
+    <input type="number" v-model="num" name="" style="width:50px;"><br/>
+    <button @click="actionIncrease(num)"> +({{ num }}) </button>
+    <button @click="actionDecrease(num)"> -({{ num }}) </button>
+    <button @click="actionMultiplication(num)"> x({{ num }}) </button>
+    <button @click="actionDivision(num)"> /({{ num }}) </button>
+    <button @click="actionCountReset">龜苓膏</button>
   </div>
 </template>
 
@@ -29,17 +34,31 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  data () {
+    return {
+      // model num 預設值為: 1
+      num: 1
+    }
+  },
   computed: {
     // ...mapGetters 為 ES7 寫法
-      // getCount return value 將會存在別名為 count 的 data 上
+    // getCount return value 將會存在別名為 count 的 data 上
     ...mapGetters({
       count: 'getCount',
     }),
   },
+  // computed: mapGetters({
+  //   count: 'getCount',
+  // }),
   methods: {
     ...mapActions([
       'actionIncrease',
       'actionDecrease',
+      // 引入歸零 action
+      'actionCountReset',
+      // 引入乘法除法 action
+      'actionMultiplication',
+      'actionDivision'
     ]),
     // 其他 method call action 的方法
     callAction() {
