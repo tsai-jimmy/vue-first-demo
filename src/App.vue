@@ -39,8 +39,8 @@
             <li><router-link :to="{name: 'c2f-step2'}">CtoF-step2</router-link></li>
             <li><router-link :to="{name: 'learnstructure'}">LearnStructure</router-link></li>
             <li><router-link :to="{name: 'count'}">Count</router-link></li>
-            <!-- <li><router-link :to="{name: 'todo'}">Todo</router-link></li>
-            <li><router-link :to="{name: 'shop'}">Shop</router-link></li>
+            <li><router-link :to="{name: 'todo'}">Todo</router-link></li>
+            <!-- <li><router-link :to="{name: 'shop'}">Shop</router-link></li>
             <li><router-link :to="{name: 'cart'}">Cart</router-link></li>
             <li><router-link :to="{name: 'open1999'}">open1999</router-link></li>
             <li><router-link :to="{name: 'login'}">login</router-link></li>

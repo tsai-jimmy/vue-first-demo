@@ -22,6 +22,7 @@ import CtoF from './pages/CtoF.vue';
 import CtoFstep2 from './pages/CtoF-step2.vue';
 import LearnStructure from './pages/LearnStructure.vue';
 import Count from './pages/count.vue';
+import ToDoList from './pages/todo.vue';
 import App from './App.vue';
 
 const router = new VueRouter({
@@ -62,6 +63,11 @@ const router = new VueRouter({
       path: '/count',
       name: 'count',
       component: Count
+    },
+    {
+      path: '/todo',
+      name: 'todo',
+      component: ToDoList
     },
     // router 轉址
     { path: '/*', redirect: '/hello' }

@@ -3,8 +3,17 @@ import Vue from 'vue'
 
 // state
 export const state = {
-  	count: 0
+  	count: 0,
+    todos: [
+      { key: 0, content: 'vue.js 2.0', done: true },
+      { key: 1, content: 'vuex 2.0', done: false },
+      { key: 2, content: 'vue-router 2.0', done: false },
+      { key: 3, content: 'vue-resource 2.0', done: false },
+    ]
 }
+// 這邊簡單做一個 todo 的流水 key
+// 預設值是 todos 的長度
+let todoKey = state.todos.length;
 
 // mutations
 export const mutations = {
@@ -32,6 +41,17 @@ export const mutations = {
   [types.Division] (state, num) {
     state.count /= num;
     console.log('Division', num, 'state?', state.count);
+  },
+  [types.ADD_TODO] (state, newTodo) {
+    // todos 是一個 Array 所以 push 一個同結構的 Object
+    state.todos.push({
+      key: todoKey, // 流水 key
+      content: newTodo, // 新 todo 的內容
+      done: false // 預設當然是未做完
+    });
+    console.log (todoKey);
+    // 流水 key +1
+    todoKey++;
   },
 
 }
