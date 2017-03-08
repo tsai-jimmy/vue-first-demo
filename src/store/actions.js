@@ -34,6 +34,7 @@ export const actionDivision = ({ commit }, num) => {
 }
 
 export const addTodo = ({ commit }, newTodo) => {
-  // 直接將 newTodo 傳遞給 mutation
-  commit(types.ADD_TODO, newTodo);
+	// 直接將 newTodo 傳遞給 mutation
+	console.log('addTodo', newTodo);
+	commit(types.ADD_TODO, newTodo);
 }

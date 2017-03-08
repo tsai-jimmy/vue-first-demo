@@ -49,6 +49,7 @@ export const mutations = {
       content: newTodo, // 新 todo 的內容
       done: false // 預設當然是未做完
     });
+    console.log('addTodo', newTodo, 'state?', state.todos.content);
     console.log (todoKey);
     // 流水 key +1
     todoKey++;

@@ -13,10 +13,7 @@
         </div>
         <ul>
             <!-- 使用 for render todos -->
-            <li v-for="(todo, index) in todos">
-            <!--  提取 content 顯示 -->
-            {{ todo.content }}
-            </li>
+            <li v-for="(todo, index) in todos">{{ todo.content }}</li>
         </ul>
     </div>
 
@@ -41,7 +38,7 @@ export default {
         ]),
         actionAddTodo() {
             // 方法一、使用
-            this.addTodo( this.newTodo );
+            // this.addTodo( this.newTodo );
 
             // 這邊示範第二種方法，不需要先引入 action 可以直接呼叫（調用）。
             // 使用 this.$store.dispatch( action(String), value );
@@ -51,5 +48,6 @@ export default {
             this.newTodo = '';
         }
     }
+
 }
 </script>
