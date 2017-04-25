@@ -38,3 +38,12 @@ export const addTodo = ({ commit }, newTodo) => {
 	console.log('addTodo', newTodo);
 	commit(types.ADD_TODO, newTodo);
 }
+
+export const toggleTodo = ({ commit }, key) => {
+	console.log(commit(types.TOGGLE_TODO, key));
+	commit(types.TOGGLE_TODO, key);
+}
+
+export const deleteTodo = ({ commit }, key) => {
+	commit(types.DELETE_TODO, key);
+}

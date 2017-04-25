@@ -49,10 +49,32 @@ export const mutations = {
       content: newTodo, // 新 todo 的內容
       done: false // 預設當然是未做完
     });
-    console.log('addTodo', newTodo, 'state?', state.todos.content);
+    console.log('addTodo', newTodo, 'state?', state.todos);
     console.log (todoKey);
     // 流水 key +1
     todoKey++;
+  },
+  // 改變狀態
+  [types.TOGGLE_TODO] (state, key) {
+    for(var i in state.todos){
+      var item = state.todos[i];
+      if ( item.key === key){
+        item.done = !item.done;
+        console.log('TOGGLE_TODO:', item.content, 'done?', item.done);
+        break;
+      }
+    }
+  },
+  // 刪除
+  [types.DELETE_TODO] (state, key) {
+    for(var i in state.todos){
+      var item = state.todos[i];
+      if ( item.key === key){
+        console.log('DELETE_TODO:', item.content, ', index?', i);
+        state.todos.splice(i, 1);
+        break
+      }
+    }
   },
 
 }
