@@ -40,7 +40,6 @@ export const addTodo = ({ commit }, newTodo) => {
 }
 
 export const toggleTodo = ({ commit }, key) => {
-	console.log(commit(types.TOGGLE_TODO, key));
 	commit(types.TOGGLE_TODO, key);
 }
 
