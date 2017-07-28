@@ -46,3 +46,8 @@ export const toggleTodo = ({ commit }, key) => {
 export const deleteTodo = ({ commit }, key) => {
 	commit(types.DELETE_TODO, key);
 }
+
+export const updateTodo = ({ commit }, obj) => {
+  console.log('updateTodo', obj);
+  commit(types.UPDATE_TODO, obj);
+}

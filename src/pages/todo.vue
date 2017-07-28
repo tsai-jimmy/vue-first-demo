@@ -32,42 +32,51 @@
                     <li v-for="(todo, index) in todos">{{ todo.content }}</li>
                 </ul> -->
                 <h2>Todo List</h2>
-                <li v-for="(item, index) in todoList">
-                    <label>
+                <!-- <li v-for="(item, index) in todoList">
+                    <label> -->
                         <!-- 
                           改變狀態
                           套用 vuex 因此不能使用 v-model 做雙向綁定，會報錯誤
                           1. 將 list 的 value bind 到 input checked 屬性上，改變樣式。
                           2. onchange 事件發出 action 帶入 key
                          -->
-                        <input type="checkbox" :checked="item.done" @change="toggleTodo( item.key )">
+                       <!--  <input type="checkbox" :checked="item.done" @change="toggleTodo( item.key )">
                         {{ item.content }}
-                    </label>
+                    </label>  -->
                     <!-- 刪除按鈕 onclick 事件發出 action 帶入 key -->
-                    <button class="btn btn-xs btn-danger" @click="deleteTodo( item.key )">
+                    <!-- <button class="btn btn-xs btn-danger" @click="deleteTodo( item.key )">
                         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
-                </li>
+                </li -->
+                <ol>
+                    <todoItem v-for="(item,index) in todoList" :item="item" />
+                </ol>
             </div>
             <div class="col-md-6">
                 <h2>Done List:</h2>
-                <ul >
+                <ol >
                     <li v-for="(item, index) in doneList">
                         <label>
                             <input type="checkbox" :checked="item.done" @change="toggleTodo( item.key )">
                             {{ item.content }}
                         </label>
                     </li>
-                </ul>
+                </ol>
             </div>
         </div><!-- end row -->
     </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
+import todoItem from '../components/todoItem.vue';
+
 
 export default {
+
+    components: {
+        todoItem
+    },
     data() {
         return {
             newTodo:''

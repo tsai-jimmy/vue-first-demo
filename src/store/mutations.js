@@ -7,7 +7,7 @@ export const state = {
     todos: [
       { key: 0, content: 'vue.js 2.0', done: true },
       { key: 1, content: 'vuex 2.0', done: false },
-      { key: 2, content: 'vue-router 2.0', done: false },
+      { key: 2, content: 'vue-router 2.0', done: true },
       { key: 3, content: 'vue-resource 2.0', done: false },
     ]
 }
@@ -61,7 +61,7 @@ export const mutations = {
       if ( item.key === key){
         item.done = !item.done;
         console.log('TOGGLE_TODO:', item.content, 'done?', item.done);
-        break;
+        // break;
       }
     }
   },
@@ -72,7 +72,18 @@ export const mutations = {
       if ( item.key === key){
         console.log('DELETE_TODO:', item.content, ', index?', i);
         state.todos.splice(i, 1);
-        break
+        break;
+      }
+    }
+  },
+  [types.UPDATE_TODO] (state, obj) {
+    for(var i in state.todos){
+      var item = state.todos[i];
+      if ( item.key === obj.key){
+        console.log('UPDATE_TODO:', item.content, ' to →', obj.change);
+      // 找到 todo 更新 content
+        state.todos[ i ].content = obj.change;
+        break;
       }
     }
   },
